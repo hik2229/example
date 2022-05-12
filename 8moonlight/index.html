@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <img src="img/bg.jpg" alt="bg" id="bg">
+    <img src="img/moon.png" alt="moon" id="moon">
+    <img src="img/mountain.png" alt="mountain" id="mountain">
+    <img src="img/road.png" alt="road" id="road">
+    <h2 id="text">MoonLight</h2>
+  </section>
+  <section class="content">
+    <h3>parallax Background Scrolling</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, quos iure! Voluptatum hic repellendus, beatae autem excepturi quidem rerum iusto sed labore nihil cupiditate perferendis neque quisquam, asperiores praesentium quaerat commodi? Itaque autem cum minus voluptates! Aspernatur sunt asperiores natus? Dicta temporibus delectus voluptatum exercitationem. Voluptatum sit ad ea alias, corporis ratione perspiciatis odio officia et eveniet adipisci itaque vitae, dolorum veniam quam. Minima voluptates consequuntur maiores suscipit. Ipsam soluta aut, rem mollitia rerum sapiente necessitatibus iusto iste saepe beatae veniam laborum nulla quam, dolorum magnam porro. Laudantium dolorum provident et dignissimos sit consequatur earum necessitatibus sapiente, repellat quia rem rerum voluptatibus sunt similique aperiam placeat reprehenderit obcaecati nulla expedita blanditiis quasi. Consequuntur ratione repudiandae temporibus, laborum esse eligendi officia magnam laudantium. Debitis, iusto unde consequuntur possimus sed ullam dolorum? Officiis eligendi deleniti quidem recusandae. Possimus doloribus deserunt sint in mollitia minima corrupti veritatis commodi laudantium ea facere, laborum corporis alias exercitationem quisquam sapiente beatae praesentium magnam. Exercitationem cum ipsam distinctio, necessitatibus excepturi ullam natus eaque voluptatum qui officiis quibusdam placeat at assumenda tempora, facilis sed expedita explicabo nesciunt non sit tempore molestiae dolor consequuntur! Sunt at illum, quae voluptates ea magni totam odit, cum vel ex delectus accusamus doloremque.</p>
+  
+  </section>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    var $window = $(window);
+    var bg = $('#bg');
+    var moon = $('#moon');
+    var mountain = $('#mountain');
+    var road = $('#road');
+    var text = $('#text');
+
+    // window.scroll(); //window scroll 움직일때마다 어떤일 일어남
+    $window.scroll(function(){
+      var value = $(this).scrollTop(); //$(this)의미 window
+      console.log(value);
+
+      bg.css({top:value * 0.2 + "px"})
+      moon.css({left: -value * 0.5 + "px", top:value * 0.4 + "px", opacity : 1 - (value * 0.002)})
+      mountain.css({top: -value * 0.15 + "px"})
+      road.css({top:value * 0.15 + "px"})
+      text.css({top:value + "px"})
+
+    });
+  </script>
+
+
+</body>
+</html>
