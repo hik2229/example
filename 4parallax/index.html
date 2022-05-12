@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- https://matthew.wagerfield.com/parallax/ -->
+  <div class="container">
+    <div id="scene">
+      <div data-depth="0.3" class="b1"><img src="img/b1.png" alt=""></div>
+      <div data-depth="-0.3" class="m2"> <img src="img/m2.png" alt=""></div>
+      <div data-depth="1" class="m1"><img src="img/m1.png" alt=""></div>
+      <div data-depth="-1"><img src="img/1.png" alt=""></div>
+      <div data-depth="1.5"><img src="img/circle1.png" alt=""></div>
+      <div data-depth="-1.7"><img src="img/circle2.png" alt=""></div>
+      <div data-depth="2"><img src="img/2.png" alt=""></div>
+      <div data-depth="-2"><img src="img/3.png" alt=""></div>
+      <div data-depth="2.5"><img src="img/4.png" alt=""></div>
+      <div data-depth="-2.5"><img src="img/5.png" alt=""></div>
+      <div data-depth="3"><img src="img/6.png" alt=""></div>
+      <div data-depth="-3.5"><img src="img/7.png" alt=""></div>
+      <div data-depth="4"><img src="img/top.png" alt=""></div>
+    </div> <!-- scene -->
+  </div> <!-- container -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js">
+
+  </script>
+  <script>
+    var scene = document.getElementById('scene');
+    var parallaxInstance = new Parallax(scene);
+  </script>
+</body>
+
+</html>

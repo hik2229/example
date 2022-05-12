@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;
+text-transform: uppercase;
+}
+
+body{
+  height: 100vh;
+  background: linear-gradient(90deg, #444 50%, #eee 50%);  
+}
+
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.container{
+  perspective: 1000px;/* 3D효과의 원근감위치(카메라위치) */
+  position: absolute;
+  left:  50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.image-container{
+  position: relative;
+  float: left;
+  width: 600px;
+  height: 500px;
+  transform-style: preserve-3d;
+  transition: 0.5s cubic-bezier(0.95, 0.01, 0.17, 1.65);
+  transform: rotateX(0deg) translateZ(0px);
+}
+.image-container .box{
+  position: absolute;
+  height: 500px;
+  width: 600px;
+  border: 2px solid #000;
+  border-right: 1px solid #000;
+}
+.image-container .box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-container .box h3{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: #fff;
+}
+.box-container{
+  transform-style: preserve-3d;/* 3d가 만들어진다 */
+  transition: 0.5s cubic-bezier(0.95, 0.01, 0.17, 1.65);
+  /* overflow: hidden; */
+  float: left;
+  width: 600px;
+  height: 500px;
+  /* transform-style:preserve-3d; */
+  transform: rotateX(0deg) translate(0px);
+}
+.box-container .box{
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  border: 2px solid #000;
+  border-left: 1px solid #000;
+  background-color: #3c6382;
+}
+
+.box-container .box .content{
+  padding: 50px;
+  padding-top: 30%;  /* % = 부모의 넓이기준 (패딩, 마진) */
+
+}
+.box-container .box .content .number{
+  position: absolute;
+  top: 5px; right: 10px;
+  font-size: 150px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+
+}
+.box-container .box .content h3{
+  font-size: 35px;
+  color: #fff;
+}
+.box-container .box .content p{
+  font-size: 17px;
+  color: #eee;
+  text-transform:lowercase;
+  padding: 10px 0;
+}
+.box-container .box .content a{
+  margin-top: 5px;  /* a요소 = 인라인요소라서 적용 x */
+  display: inline-block;
+/*   inline요소 -- 글자와 같은 속성을 가진 요소
+  자식의 공간만큼 차지
+  마진과 패딩의 양쪽값만 적용됨
+  그러므로 상하 값은 적용 x */
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #000;
+  transition: 0.3s;
+  
+}
+.box-container .box .content a:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+.box-container .box:nth-child(2){/* 형제 중 둘째 */
+background-color: #8e44ad;
+}
+.box-container .box:nth-child(3){/* 형제 중 셋째 */
+background-color: #e58e26;
+}
+.box-container .box:nth-child(4){/* 형제 중 넷째 */
+background-color: #b71540;
+}
+
+
+.front{transform: rotateX(0deg) translateZ(250px);}
+.bottom{transform: rotateX(-90deg) translateZ(250px);}
+.back{transform: rotateX(-180deg) translateZ(250px);}
+.top{transform: rotateX(90deg) translateZ(250px);}
+
+#r1,#r2,#r3,#r4{display: none;}
+.controls{
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px 5px;
+}
+
+.controls label{
+  display: block;
+  height: 15px; width: 15px;
+  border: 1px solid #000;
+  background-color: #aaa;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+/* ~ : 내 동생들, */
+/* #r2:checked ~ .controls label:nth-child(2){
+  background-color: #333;
+} */
+
+#r1:checked ~ .container .image-container{
+  transform: rotateX(0deg) translateZ()
+
+}
+#r2:checked ~ .container .image-container{
+  transform: rotateX(-90deg) translateZ(0);
+
+}
+#r3:checked ~ .container .image-container{
+  transform: rotateX(-180deg) translateZ(0)
+
+}
+#r4:checked ~ .container .image-container{
+  transform: rotateX(-270deg) translateZ(0)
+  
+}
+#r1:checked ~ .container .box-container{
+  transform: rotateX(0deg) translateZ()
+
+}
+#r2:checked ~ .container .box-container{
+  transform: rotateX(90deg) translateZ(0);
+
+}
+#r3:checked ~ .container .box-container{
+  transform: rotateX(180deg) translateZ(0)
+
+}
+#r4:checked ~ .container .box-container{
+  transform: rotateX(270deg) translateZ(0)
+  
+}

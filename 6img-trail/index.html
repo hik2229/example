@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top" style="height: 100vh; background: #ccc;"></div>
+
+  <div class="main">
+    <h1>image-Trail</h1>
+    <div class="img img-1"></div>
+    <div class="img img-2"></div>
+    <div class="img img-3"></div>
+    <div class="img img-4"></div>
+    <div class="img img-5"></div>
+  </div>
+
+  <div class="bottom" style="height: 100vh; background: #ccc;"></div>
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    var img1 = $('.img-1');
+    var img2 = $('.img-2');
+    var img3 = $('.img-3');
+    var img4 = $('.img-4');
+    var img5 = $('.img-5');
+    var main = $('.main');
+
+    main.mousemove(function(e){
+      var x = e.clientX;
+      var y = e.clientY;
+      // console.log(y);
+      img1.css({top:y - 50 + "px", left:x - 200 + "px"});
+      img2.css({top:y - 50 + "px", left:x - 200 + "px"});
+      img3.css({top:y - 50 + "px", left:x - 200 + "px"});
+      img4.css({top:y - 50 + "px", left:x - 200 + "px"});
+      img5.css({top:y - 50 + "px", left:x - 200 + "px"});
+    });
+//     function showCoords(event) {
+//   var x = event.clientX;
+//   var y = event.clientY;
+//   var coords = "X coords: " + x + ", Y coords: " + y;
+//   document.getElementById("demo").innerHTML = coords;
+// }
+  </script>
+</body>
+
+</html>
