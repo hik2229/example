@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="text">0</div>
+  <div class="bg" 
+  data-500="background-color:rgb(183, 229, 221);" 
+  data-1000="background-color:rgb(69, 82, 108);"></div>
+
+  <section class="slide01 slide"
+  data-0="top:0%"
+  data-500="top:-100%"
+  >
+    <div class="slide_content">
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure veritatis ab voluptas, facilis eaque officiis earum quos, vero natus quisquam corrupti sunt. Veritatis dolore cupiditate tempore similique officia at harum?</p>
+    </div>
+  </section>
+   <section class="slide02 slide"
+  data-500="transform:translateX(100%)"
+  data-1000="transform:translateX(0%); opacity:1"
+  data-1500="transform:scale(1.5);"
+  data-2000="transform:scale(2); opacity:0"
+  >
+  <div class="slide_content">
+    <h2>George came arround the corner after the cat</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo consequuntur perferendis dolorum recusandae animi temporibus voluptas rerum ullam ducimus debitis.</p>
+  </div>
+</section>
+  <section class="slide03 slide"
+  data-1000="top:-100%; opacity:0"
+  data-2000="top:0%; opacity:1" 
+  >
+  <div class="slide_content">
+    <h3>Now the cat was coming back down the street</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima repudiandae quisquam delectus. Accusamus blanditiis cumque tempora eum, qui vel!</p>
+  </div>
+</section>
+  <section class="slide04 slide"
+  data-2000="opacity:0"
+  data-3000="opacity:1"
+  >
+  <div class="slide_content"
+  data-2000="top:200px"
+  data-3000="top:0px"
+  >
+    <h4>[우주를 보다] 인도 하늘서 뚝 떨어진 중국 우주쓰레기…불뿜는 추락체</h4>
+    <p>▲ 인도 ANI통신과 AFP통신 등은 2일(현지시간) 중국 로켓 잔해가 인도로 추락했다고 보도했다.
+      
+      2일(이하 현지시간) 밤, 주홍빛 유성우가 인도 하늘을 갈랐다. 엄청난 빛을 내뿜으며 떨어진 유성우는 마하라슈트라주 전역에서 관측됐다. 마하라슈트라주 나시크시 한 주민은 현지매체에 “밤 8시쯤 하늘에서 유성을 봤다. 유성우는 네 갈래로 떨어졌다”고 밝혔다.
+      
+      모두가 유성우인 줄로만 알았던 추락체는 그러나 중국 우주 쓰레기였다. 인도 ANI통신과 AFP통신 등은 이날 중국 로켓 잔해가 인도로 추락했다고 보도했다.
+      
+      실제 유성우가 추락한 지점에서는 거대 로켓 잔해가 발견됐다. 마하라슈트라주 찬드라푸르시 신데와히(9.6E 20.3N)에서는 로켓 연결 링으로 추정되는 직경 3m, 무게 40㎏짜리 잔해가 수거되기도 했다.</p>
+  </div>
+</section>
+
+<section class="slide03 slide"
+data-2000="opacity:0"
+data-3000="opacity:1"
+>
+<div class="slide_content"
+data-2000="top:200px"
+data-3000="top:0px"
+>
+  <h4>BADA JAJEONGEO</h4>
+  <p>NEVER TRY IN SUMMER</p>
+</div>
+</section>
+
+
+<section class="slide05 slide"
+data-2500="top:100%; left:100%; transform:rotate(0deg) scale(0)"
+data-4000="top:-100%; left:-100%; transform:rotate(700deg) scale(4)"
+>
+  <img src="img/shuttle.png" alt="shuttle">
+</section>
+
+<section class="slide06 slide"
+data-3500=" opacity:0; transform:rotate(0deg) scale(0);"
+data-4500=" opacity:1; transform:rotate(720deg) scale(1.5);"
+>
+<div class="image">
+  <img src="https://imgnn.seoul.co.kr/img//upload/2022/04/05/SSI_20220405153217_V.gif" alt=""></div>  
+
+</section>
+
+  <!-- <section class="slide05 slide"
+  data-0="top:-100%; transform:scale(0) rotate(400deg); opacity:0"
+  data-500="top:-50%; transform:scale(0.25) rotate(1000deg); opacity:1"
+  data-1000="top:-25%; transform:scale(0.7) rotate(2000deg); opacity:1"
+  data-2000="top:0%; transform:scale(1) rotate(4000deg); opacity:0"
+    ></section> -->
+
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+  <script src="skrollr.min.js"></script>
+  <script>
+    var s = skrollr.init();
+
+
+    $(window).scroll(function(){
+      var wScroll = parseInt($(this).scrollTop());//정수값으로 변환
+      console.log(wScroll);
+      $('.text').text(wScroll)
+    });
+  </script>
+</body>
+</html>

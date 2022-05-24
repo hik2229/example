@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="text">0</div>
+  <div class="fixed-bg"
+  data-500="background-color:rgba(112,188,32)"
+  data-1000="background-color:rgba(50,50,50); 
+  width:100%; left:0"
+  data-2000="width:60%; left:20%"
+  ></div>
+  <section class="one slide" 
+  data-0="top:0%" 
+  data-500="top:-100%">
+  </section><!-- one slide -->
+  <section class="two slide"
+  data-500="transform:translateX(100%)"
+  data-1000="transform:translateX(0%); opacity:1"
+  data-2000="opacity:0;"
+  ></section>
+  <section class="three slide"
+  data-1500="transform:scale(0)"
+  data-2500="transform:scale(1)"
+  ></section>
+
+  <section class="four slide">
+    <div class="circle"
+    data-2000="top:200%"
+    data-3000="top:-100%"
+    ></div>
+  </section>
+
+  <section class="five slide">
+    <div class="triangle"
+    data-2000="top:-100%; transform:rotate(100deg)" 
+    data-3000="top:200%; transform:rotate(800deg)"
+    ></div>
+  </section>
+
+  <section class="six slide">
+    <div class="oval"
+    data-100="left:200%; top:50%"
+    data-3000="left:-100%; top:50%"
+    ></div>
+  </section>
+
+  <section class="seven slide">
+    <img src="../9cider/img/history_1950_00.png" class="image" alt="cider"
+    data-100="right:200%"
+    data-3000="right:-100%"
+    ></div>
+  </section>
+
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+  <script src="skrollr.min.js"></script>
+  <script>
+    	var s = skrollr.init();
+
+
+
+    $(window).scroll(function(){
+      var wScroll = parseInt($(this).scrollTop()); //정수값
+      console.log(wScroll);
+      $('.text').text(wScroll)
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="sec1">
+    <div class="bg"
+    data-0="background-color:rgba(0,0,0);">
+      <img src="img/busan_choibaekho 2.jpeg" class="choi" alt="choi" 
+      data-0="opacity:0;" 
+      data-500="opacity:1;"
+      data-1000="opacity:0;"
+      >
+      <div class="bg2 bg"
+      data-500="top:100%; opacity:0;" 
+      data-1000="top:0%; opacity:1;"
+      data-1500="top:0%; opacity:1;"
+      data-2000="top:0%; opacity:0;"
+      >
+      </div><!-- slide01 -->
+    </div><!-- bg -->
+  </div><!-- sec1 -->
+
+ <div id="sec2" style="height: 300vh;"
+  data-2500="top:0%; opacity:0;"
+      data-2700="top:0%; opacity:1;"
+      data-3000="top:0%; opacity:1;"
+      data-3500="top:0%; opacity:0;">
+      <div class="container"
+      >
+        <img src="img/gwangco.png" alt="광안리">
+        <img src="img/gwang.png" alt="광안리">
+        <img src="img/haec.png" alt="해운대">
+        <img src="img/hae.png" alt="해운대">
+        <img src="img/jaco.png" alt="자갈치">
+        <img src="img/ja.png" alt="자갈치">
+        <img src="img/gamco.png" alt="감천">
+        <img src="img/gam.png" alt="감천">
+      </div>    
+  </div>
+
+  <div id="ending" style="height: 100vh;"
+    data-3500=" opacity:0;"
+    data-3800=" opacity:1;"
+    data-4000=" opacity:1;">
+    <div class="wrap"
+      data-3500="top:0%; opacity:0;"
+      data-4000="top:0%; opacity:1;"
+      data-4400="top:0%; opacity:1;"
+      data-4500="top:0%; opacity:0.5;"
+      data-4540="top:0%; opacity:0;"
+      >
+    </div>
+    <div class="bg">
+    <div class="oval"
+    data-4300=" transform:scale(1) ;"
+    data-4500=" transform:scale(0.5) ;"
+    data-4600=" transform:scale(0.3) ;"
+    data-4700=" transform:scale(0) ;"
+    >
+    </div>
+  </div>
+  </div><!-- ending -->
+</div>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="skrollr.min.js"></script>
+  
+  
+  <script>
+    var s = skrollr.init();
+
+    $(window).scroll(function(){
+      var wScroll = parseInt($(this).scrollTop()); //정수값
+      console.log(wScroll);
+      $('.text').text(wScroll)
+    })
+  </script>
+</body>
+
+</html>
