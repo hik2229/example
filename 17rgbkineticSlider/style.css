@@ -1,0 +1,33 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+#sec1{height: 100vh;}
+.container{
+  position: relative;
+  width: 90%; 
+  margin: 0 auto;
+  height: 100vh;
+}
+.imgSlider{position: relative;}
+
+#rgbKineticSlider{
+  position: absolute;
+  width: 70%; height: 70%;
+  right: 0; top: 50px;
+}
+#rgbKineticSlider canvas{
+  position: absolute;
+  height: 400px !important;
+}
+
+nav .main-nav{
+  position: absolute;
+  top: 50%;
+  z-index: 100; 
+  width: 100px; height: 30px;
+  background: red;
+  color: #fff;
+  text-align: center;
+}
+nav .main-nav.prev{left: 278px;}
+nav .main-nav.next{right: -58px;}

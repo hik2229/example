@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="wrapper">
+    <div class="project-list">
+      <div class="project p-1">
+        <div class="project-title">
+          <h2><a href="www.naver.com">Motion Land1</a></h2>
+        </div>
+        <div class="project-categ">
+          Branding1
+        </div>
+      </div><!-- project p-1 -->
+      <div class="project p-2">
+        <div class="project-title">
+          <h2><a href="www.naver.com">Motion Land2</a></h2>
+        </div>
+        <div class="project-categ">
+          Branding2
+        </div>
+      </div><!-- project p-2 -->
+      <div class="project p-3">
+        <div class="project-title">
+          <h2><a href="www.naver.com">Motion Land3</a></h2>
+        </div>
+        <div class="project-categ">
+          Branding3
+        </div>
+      </div><!-- project p-3 -->
+      <div class="project p-4">
+        <div class="project-title">
+          <h2><a href="www.naver.com">Motion Land4</a></h2>
+        </div>
+        <div class="project-categ">
+          Branding4
+        </div>
+      </div><!-- project p-4 -->
+    </div>
+  </div>
+  
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+
+var $cursor = $('.cursor');
+var $project = $('.project');
+
+  $('.p-1').hover(function(){
+    $('.cursor').css({'background-image':'url(img/image-1.jpg'})
+  })
+  $('.p-2').hover(function(){
+      $('.cursor').css({backgroundImage:'url(img/image-2.jpg)'})
+  })
+  $('.p-3').hover(function(){
+      $('.cursor').css({'background-image':'url(img/image-3.jpg)'})
+  })
+  $('.p-4').hover(function(){
+      $('.cursor').css({'background-image':'url(img/image-4.jpg)'})
+  })
+  //'background-image' = backgroundImage
+  //중간에 - 있을경우 따옴표로 묶어야함 아니면 카멜형식으로 적어야
+
+  $project.mousemove(function(e){
+    $cursor.css({
+      transform:'scale(' + 1 + ')',
+                opacity:1,
+                left:e.pageX,
+                top:e.pageY
+    })
+  });
+
+  $project.mouseleave(function(){
+    $cursor.css({
+      transform:'scale(' + 0.1 + ')',
+                opacity:0,
+                
+    })
+  });
+
+</script>
+</html>
