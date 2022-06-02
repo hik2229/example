@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top" style="height:100vh ;"></div>
+
+  <div class="newspaper">
+    <div class="container">
+      <div class="text">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, velit.</p>
+      </div><!-- text -->
+      <div class="wrap">
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s1.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s1.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s2.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s2.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s3.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s3.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s4.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s4.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s5.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s5.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s6.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s6.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s7.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s7.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+        <div class="hb">
+          <div class="cont">
+            <img src="img/f_s8.jpg" alt="이미지">
+          </div><!-- cont -->
+        </div><!-- hb -->
+        <div class="fullBg">
+          <img src="img/f_s8.jpg" alt="배경이미지">
+        </div><!-- fullBg -->
+      </div><!-- wrap -->
+    </div><!-- container -->
+  </div><!-- newspaper -->
+  <div class="bottom" style="height:100vh ;"></div>
+  
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+<script>
+  var docwidth = $('body').width(),
+      $wrap = $('.wrap'),
+      $imgs = $('.wrap .hb'),
+      slideWidth = $wrap.width(); //변수 계속 쓸때 var 반복 안하고 끝에 , 치면 됨
+
+      $wrap.mousemove(function(e){
+        var mouseX = e.pageX;
+        //console.log(mouseX);
+        var offset = mouseX / docwidth * slideWidth - mouseX / 2;
+
+
+        $imgs.css({
+          transform:'translateX(' + -offset + 'px)'
+        })
+
+      });
+      $wrap.mouseleave(function(e){
+        $imgs.css({
+          transform:'translateX(' + 0 + 'px)',
+          transition: 0.5 + 's' //0.5초 s는 문자라서 ''로 싸줌
+        }) //제자리로 너무 급하게 가지않게. transition0.5s 줌
+      });
+</script>
+</html>

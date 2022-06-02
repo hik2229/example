@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0;}
+.clearfix:after{
+  content: "";
+  clear:both;
+  display: block;
+}
+
+#header{background: rgb(199, 205, 255); height: 200px;}
+#banner{background: rgb(252, 233, 151); height: 200px;}
+#sticky{background: rgb(192, 192, 192);}
+#sticky .left{background: rgb(201, 124, 124);
+  float: left; width: 50%; height: 100vh;}
+#sticky .left .l1{background: rgb(200, 214, 181); height: 50vh;}
+#sticky .left .l2{background: rgb(255, 251, 234); height: 50vh;}
+#sticky .left .l3{background: rgb(168, 216, 255); height: 50vh;}
+
+#sticky .left .l3 .rr{position: sticky; top: 0; left: -100px; height: 20vh;}
+#sticky .left .l3 .rr div{overflow: hidden; height: 100%;}
+#sticky .left .l3 .rr div img{width:  50%;}
+
+#sticky .left .l4{background: rgb(54, 54, 54); height: 50vh;}
+
+#sticky .right{background: rgb(175, 110, 12);
+  float: right; width: 50%; height: 200vh;}
+#sticky .right .r{position:sticky; 
+  top: 0; left: 200px;
+  background: rgb(16, 51, 30); height: 50vh;}
+
+#sticky .right .r div{height: 100%; overflow: hidden;}
+#sticky .right .r div img{width: 100%;}
+
+
+
+
+#footer{background: rgb(25, 24, 41); height: 100vh;}
+
+/* sticky 요구 */
+overflow:hidden - 상위요소에 있으면 X
+                - 하위요소 사용 O
+position:sticky가 있는 요소의 부모요소는 높이값을 적어주어야
+                          에게 top값 적어줘야(cf.left,right 적용X)
+부모의 높이만큼 화면 고정 (≒ display:fixed)

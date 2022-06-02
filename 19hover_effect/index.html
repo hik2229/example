@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hover_effect{
+      width: 1200px; margin: 0 auto;
+      height: 100vh;
+    }
+    .my-div{
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px; 
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hover_effect">
+    <div class="my-div">
+
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.0/TweenMax.min.js"></script>
+  <script src="js/hover-effect.umd.js"></script>
+  <script>
+    var myAnimation = new hoverEffect({
+        parent: document.querySelector('.my-div'),
+        intensity: 0.3,
+        image1: 'images/01.png',
+        image2: 'images/02.png',
+        displacementImage: 'images/displacement/4.jpg',
+        imagesRatio:600/500,
+    });
+  </script>
+</body>
+</html>
