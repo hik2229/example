@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: #222;}
+body{background: #e9d5ca;}
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.sec3 .res{
+  position: relative;
+  width: 700px;
+  height: 600px;
+}
+
+.sec3 .res .site_bg{
+  width: 100%; height: 100%;
+  background: url(img/site.png)no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  pointer-events: none; /* 마우스 올려도 인식 x */
+}
+
+.sec3 .res>div:not(.button){ /* 자식중div중에 class명 button인것만 빼고 */
+  /* 제외선택자
+  선택자:not(제외내용){} */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: red;
+}
+
+.sec3 .res>div.top_site_1{
+  width: 385px;
+  height: 244px;
+  top: 181px;
+  left: 105px;
+  background: url(img/wfull.png);
+  background-size: cover;
+  background-position: top;
+  transition: 1s;
+}
+.sec3 .res>div.top_site_1:hover{
+  background-position: bottom;
+}
+
+
+.sec3 .res>div.top_site_2{
+  width: 257px;
+  height: 196px;
+  top: 324px;
+  left: 394px;
+  background: url(img/w960.png);
+  background-size: cover;
+  background-position: top;
+  transition: 1s;
+}
+.sec3 .res>div.top_site_2:hover{
+  background-position: bottom;
+}
+
+.sec3 .res>div.top_site_3{
+  width: 85px;
+  height: 115px;
+  top: 437px;
+  left: 251px;
+  background: url(img/w320.png);
+  background-size: cover;
+  background-position: top;
+  transition: 1s;
+}
+.sec3 .res>div.top_site_3:hover{
+  background-position: bottom;
+}
+.sec3 .button{
+  position: absolute;
+  right: -140px;
+  top: 339px;
+}
+.sec3 .button>div{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+.sec3 .button>div a{display: block;
+  padding: 10px 20px;
+  text-align: center;
+  }
+.sec3 .button>div:hover{
+  background: rgb(182, 182, 182);
+  color: #fff;
+}

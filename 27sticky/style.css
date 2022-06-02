@@ -1,0 +1,60 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+.clearfix::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.wrap{}
+.wrap .top_box{
+  position: relative;
+  height: 100vh;
+  background: #080808;
+}
+.wrap .top_box h2{
+  color: #333; font-size: 80px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fix_motion{background: blue;}
+.fix_motion .fix_wrap{height: 400vh; width: 100%;}
+.fix_motion .fix_wrap .device_fix{
+  position: sticky; /* sticky는 부모(직계)요소에 overflow:hidden없어야 */
+  top: 0; /* left, right값 안먹힘 */
+}
+.fix_motion .fix_wrap .device_fix .inner{
+  width: 100%; height: 100vh;
+  overflow: hidden;
+}
+.fix_motion .device_fix .slide_wrap{
+  position: relative;
+  width: 100vw; height: 100vh;
+}
+.fix_motion .device_fix .slide_wrap .slide{
+  position: absolute;
+  width: 400vw; height: 100%;
+  transition: 0.5s;
+}
+.fix_motion .device_fix .slide_wrap .slide .child{
+  position: relative;
+  float: left;
+  width: 100vw; height: 100vh;
+}
+.fix_motion .device_fix .slide_wrap .slide .child1{background: #9A86A4;}
+.fix_motion .device_fix .slide_wrap .slide .child2{background: #B1BCE6;}
+.fix_motion .device_fix .slide_wrap .slide .child3{background: #B7E5DD;}
+.fix_motion .device_fix .slide_wrap .slide .child4{background: #EEF3D2;}
+.fix_motion .device_fix .slide_wrap .slide .child h2{
+  color: #333; font-size: 80px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s 0.3s;
+}
+
+.fix_motion .device_fix .slide_wrap .slide .child.active h2{
+  color: blue;
+}

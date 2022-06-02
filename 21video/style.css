@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+body{
+  margin: 0; padding: 0;
+  font-size: 15px; /* 아무설정 안하면 16px */
+  background: #212835;
+}
+
+.video_wrap{
+  height: 100vh;
+  max-width: 1400px; /* 1400이상 커지지 x */
+  margin: 0 auto;
+}
+
+.main_container{
+  padding: 25px;
+}
+.trends{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;}
+.trends #play-all{
+  background: #fa3a2f; color: #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  width: 95px; /* 클릭하고 변해도 넓이값 고정 */
+}
+
+.trends #play-all i{
+  margin-right: 16px;
+}
+.trends #play-all .fa-play{
+  display: none;
+}
+.trends #play-all.on .fa-play{
+  display: block;
+}
+.trends #play-all .fa-pause{
+  display: block;
+}
+.trends #play-all.on .fa-pause{
+  display: none;
+}
+
+.trends #play-all .play-all{font-style: normal;}
+
+
+
+
+.videos{display: flex; flex-wrap: wrap;}
+.videos .video{position: relative;
+  width: 23%;
+  margin: 1%; padding-top: 9%; overflow: hidden;
+  border-radius: 4px;}
+.videos .video .video-time{
+  position: absolute;
+  right: 6px; top: 65px;
+  background: rgba(0,0,0,.5);
+  border-radius: 15px;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px;
+  z-index: 40 ;
+  transition: 0.3s;
+}
+.videos .video:hover .video-time{
+  opacity: 0;
+}
+.videos .video video{width: 100%;
+  position: absolute; left: 0; top: 0;
+  transition: 0.5s;
+}
+.videos .video:hover video{
+  transform: scale(2.2);
+  transform-origin: center top;
+  z-index: 30;
+}
+.videos .video .video-content{
+  color: #808080;
+  background: #fff;
+  padding: 15px 10px 0;
+  position: relative;
+  z-index: 20;
+}
+.videos .video .view{
+  background: #fff;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 0 0 4px 4px; /* 좌상 우상 우하 좌하 */
+  position: relative;
+  z-index: 20;
+}

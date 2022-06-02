@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="bar"></div><!-- 움직이는 바 -->
+    <div class="rate" data-rate="60">0</div><!-- 변하는 숫자 -->
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    var progressWrap = $('.progress-bar'),
+        progressBar = $('.progress-bar .bar'),
+        progressText = $('.progress-bar .rate'),
+        progressRate = progressText.attr('data-rate');//60
+
+        //A.attr(B) --> A안 B 속성값 호출
+        //A.attr(B,C) --> A안 B 속성값 C로 변경
+
+        //A.animate({실행문},시간)
+        progressBar.animate({
+          width:progressRate + "%"
+        },2000);
+
+        /* setInterval(할일,시간)//시간마다 할일
+        setInterval(function(){할일},시간) */
+        setInterval(function(){
+          var currentRate = progressBar.width()/progressWrap.width() *100;
+          // console.log(currentRate);
+          progressText.text(Math.floor(currentRate))
+          Math.floor()-->내림차순
+          Math.ceil()-->올림차순
+        },100)
+  </script>
+</body>
+</html>

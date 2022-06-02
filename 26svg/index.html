@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .circle_wrap{width: 400px; margin: 200px auto;}
+    .circle_wrap .draw{
+      stroke-dasharray: 1037px;
+      stroke-dashoffset: 1037px;
+
+      transition: 1s;
+    }
+    .circle_wrap:hover .draw{
+      /* stroke-dashoffset: 1037px; 처음부터 그려짐 (원태그에 dashoffset 지워야) */
+
+      stroke-dashoffset: 0px; /* 없다가 등장 */
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="circle_wrap">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px" y="0px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+      <style type="text/css">
+        .st0 {
+          fill: none;
+          stroke: #000000;
+          stroke-miterlimit: 10;
+        }
+      </style>
+      <path class="st0 draw" d="M250,85c91.1,0,165,73.9,165,165s-73.9,165-165,165S85,341.1,85,250S158.9,85,250,85" />
+    </svg>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+body{background: #f3c892;}
+
+section{
+  position: relative;
+  height: 100vh;
+}
+section .cover{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 400px;
+}
+section .cover .bg{
+  height: 100%;
+  background: url(patient.jpg)no-repeat center;
+  background-size: cover;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  transition: 0.5s;
+}
+section .cover:hover .bg{
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}

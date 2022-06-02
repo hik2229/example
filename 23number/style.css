@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.progress-bar{
+  position: relative;
+  width: 960px; height: 30px;
+  margin: 30em auto; /* 30*16px = 480px
+  em 기준 - 나의 font-size값
+  rem 기준 - body의 font-size값 */
+  border: 1px solid seagreen;
+}
+.progress-bar .bar{
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 0;
+  background: red;
+}
+.progress-bar .rate{
+  position: absolute;
+  right: 15px; top: 0; bottom: 0;
+  font-size: 20px;
+}
